@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="free web tutorial">
+    <meta name="kewarde" content="html">
+    <meta name="auther" content="alzahraa">
+    <meta name="viewport" content="width=device-width,initial scale=1.0">
+    <meta htttp-equiv="refresh" content="60s">
+    <title>personal form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        
+        form {
+            font-family: 'Quicksand', sans-serif;
+            font-family: 'Satisfy', cursive;
+            margin: 20px auto;
+            border: none;
+            width: 40%;
+            height: 80%;
+            /* text-align: center; */
+            background:#eff9fe;
+            padding: 20px;
+            border-radius: 5%;
+  box-shadow:  5px 10px 10px #f8def5;
+        }
+    </style>
+
+</head>
+<bady class="container">
+    <form  action="" method="">
+        <div>
+            <h3 style="text-align: center;">your basic info</h3>
+            <label for="name">
+                Name:
+            </label>
+            <input type="text" id="name"    name="name" required class="form-control" class="input-group input-group-lg">
+        </div>
+
+        <div>
+            <label for="name">
+                email:
+            </label>
+            <input type="email"  id="email"  name="email" required class="form-control" class="input-group input-group-lg">
+        </div>
+
+        <div>
+            <label for="name">
+                passward:
+            </label>
+            <input type="password"  id="password"    name="pass" minlength="6" required class="form-control"
+                class="input-group input-group-lg">
+        </div>
+       
+            <label>
+                age:
+            </label>
+            <div>
+            <input type="radio" name="age" class="form-check-input"> under 16 year
+            <br>
+            <input type="radio" name="age" class="form-check-input"> 16 year or older
+        </div>
+
+        <h3 style="text-align: center;"> your porfile</h3>
+        
+        <!-- <p>biography</p> -->
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">biography</label>
+          </div>
+
+        <div>
+            <label for="">
+                 cources :
+            </label>
+
+            <select name="cources" id="2"  class="form-select">
+                <option value="computer Sciences">computer Sciences</option>
+                <option value="data base">data base</option>
+                <option value="back end">bach end</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-check">
+            <label>
+                interests:
+            </label>
+            <input type="checkbox" name="interests[]" id="" value="Engineering" class="form-check-input">Engineering
+            <br>
+            <input type="checkbox" name=" interests[]" id="" value="business" class="form-check-input">business
+            <br>
+            <input type="checkbox" name=" interests[]" id="" value="Low" class="form-check-input">Low
+            <br>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary" style="width: 470px; background: #072541; !important">Submit</button>
+          </div>
+
+    </form>
+
+<script>
+     const form = document.getElementById('myForm');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const passwordInput = document.getElementById('password');
+    const errors = [];
+
+  // Validate name
+  if (!nameInput.value.trim()) {
+    errors.push('Please enter your name');
+  }
+
+  // Validate email
+  if (!emailInput.value.trim()) {
+    errors.push('Please enter your email');
+  } else if (!/^\S+@\S+\.\S+$/.test(emailInput.value)) {
+    errors.push('Please enter a valid email');
+  }
+
+  // Validate password
+  if (!passwordInput.value.trim()) {
+    errors.push('Please enter your password');
+  } else if (passwordInput.value.length < 6) {
+    errors.push('Password must be at least 6 characters long');
+  }
+
+});
+
+</script>
+</bady>
+
+</html>
